@@ -57,17 +57,17 @@ urls = api.url.URLS({
         "module": "url_modules.api.sources"
     },
     "api-registers": {
-        "url": "/api/registers$",
+        "url": "/registers$",
         "match": "^/api/registers$",
         "module": "url_modules.api.registers"
     },
     "api-breakpoint-add": {
-        "url": "/api/breakpoint/add",
+        "url": "/breakpoint",
         "match": "^/api/breakpoint/add$",
         "module": "url_modules.api.breakpoint.add"
     },
     "api-breakpoint-del": {
-        "url": "/api/breakpoint/del",
+        "url": "/breakpoint/delete",
         "match": "^/api/breakpoint/del$",
         "module": "url_modules.api.breakpoint.del"
     },
@@ -97,22 +97,22 @@ urls = api.url.URLS({
         "module": "url_modules.api.runtime.attach"
     },
     "api-runtime-run": {
-        "url": "/api/runtime/run",
+        "url": "/debug/run",
         "match": "^/api/runtime/run$",
         "module": "url_modules.api.runtime.run"
     },
     "api-runtime-pause": {
-        "url": "/api/runtime/pause",
+        "url": "/debug/pause",
         "match": "^/api/runtime/pause$",
         "module": "url_modules.api.runtime.pause"
     },
     "api-runtime-step": {
-        "url": "/api/runtime/step",
+        "url": "/debug/step",
         "match": "^/api/runtime/step$",
         "module": "url_modules.api.runtime.step"
     },
     "api-runtime-next": {
-        "url": "/api/runtime/next",
+        "url": "/debug/next",
         "match": "^/api/runtime/next$",
         "module": "url_modules.api.runtime.next"
     },
@@ -122,7 +122,7 @@ urls = api.url.URLS({
         "module": "url_modules.api.runtime.stepi"
     },
     "api-runtime-continue": {
-        "url": "/api/runtime/continue",
+        "url": "/debug/continue",
         "match": "^/api/runtime/continue$",
         "module": "url_modules.api.runtime.continue"
     },
@@ -132,7 +132,7 @@ urls = api.url.URLS({
         "module": "url_modules.api.thread.switch"
     },
     "api-stack-trace": {
-        "url": "/api/stack/trace",
+        "url": "/debug/stack/trace",
         "match": "^/api/stack/trace$",
         "module": "url_modules.api.stack.trace"
     },
@@ -142,7 +142,7 @@ urls = api.url.URLS({
         "module": "url_modules.api.stack.switch"
     },
     "api-frame-variable": {
-        "url": "/api/frame/variable",
+        "url": "/debug/watches",
         "match": "^/api/frame/variable$",
         "module": "url_modules.api.frame.variable"
     },
