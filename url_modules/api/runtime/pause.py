@@ -20,7 +20,8 @@ def run(request, params):
     qs_params = urllib.parse.parse_qs(url_path.query)
 
     result_json = {}
-    result_json["ok"] = True
+    result_json["code"] = 200
+    result_json["msg"] = "success"
 
     api.debug.pause()
 

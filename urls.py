@@ -58,7 +58,7 @@ urls = api.url.URLS({
     },
     "api-registers": {
         "url": "/registers$",
-        "match": "^/api/registers$",
+        "match": "^/registers$",
         "module": "url_modules.api.registers"
     },
     "api-breakpoint-add": {
@@ -87,8 +87,8 @@ urls = api.url.URLS({
         "module": "url_modules.api.runtime.signal"
     },
     "api-runtime-terminate": {
-        "url": "/api/runtime/terminate",
-        "match": "^/api/runtime/terminate",
+        "url": "/debug/terminate",
+        "match": "^/debug/terminate",
         "module": "url_modules.api.runtime.terminate"
     },
     "api-runtime-attach": {
@@ -98,22 +98,22 @@ urls = api.url.URLS({
     },
     "api-runtime-run": {
         "url": "/debug/run",
-        "match": "^/api/runtime/run$",
+        "match": "^/debug/run$",
         "module": "url_modules.api.runtime.run"
     },
     "api-runtime-pause": {
         "url": "/debug/pause",
-        "match": "^/api/runtime/pause$",
+        "match": "^/debug/pause$",
         "module": "url_modules.api.runtime.pause"
     },
     "api-runtime-step": {
         "url": "/debug/step",
-        "match": "^/api/runtime/step$",
+        "match": "^/debug/step$",
         "module": "url_modules.api.runtime.step"
     },
     "api-runtime-next": {
         "url": "/debug/next",
-        "match": "^/api/runtime/next$",
+        "match": "^/debug/next$",
         "module": "url_modules.api.runtime.next"
     },
     "api-runtime-stepi": {
@@ -123,7 +123,7 @@ urls = api.url.URLS({
     },
     "api-runtime-continue": {
         "url": "/debug/continue",
-        "match": "^/api/runtime/continue$",
+        "match": "^/debug/continue$",
         "module": "url_modules.api.runtime.continue"
     },
     "api-thread-switch": {
@@ -133,7 +133,7 @@ urls = api.url.URLS({
     },
     "api-stack-trace": {
         "url": "/debug/stack/trace",
-        "match": "^/api/stack/trace$",
+        "match": "^/debug/stack/trace$",
         "module": "url_modules.api.stack.trace"
     },
     "api-stack-switch": {
