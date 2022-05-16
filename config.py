@@ -26,8 +26,8 @@ disabled_plugins = [
 ]
 
 VERBOSE = False
-HOST_ADDRESS = "0.0.0.0"
-BIND_ADDRESS = "182.61.27.101"
+HOST_ADDRESS = "182.61.27.101"
+BIND_ADDRESS = "0.0.0.0"
 HTTP_PORT = 5550
 PLUGINS_DIR = os.path.join(app_path, "plugins")
 IS_READONLY = False
