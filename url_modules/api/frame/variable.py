@@ -22,6 +22,7 @@ def run(request, params):
     result_json = {}
     result_json["code"] = 200
     result_json["msg"] = "success"
+    result_json['ok'] = True
 
     if qs_params.get("variable") is None and qs_params.get("expression") is None:
         result_json["ok"] = False
@@ -39,7 +40,7 @@ def run(request, params):
             result_json["variable"] = variable.serializable()
         else:
             result_json["variable"] = False
-
+    result_json.pop("ok")
     request.send_response(200)
     request.send_header("Content-Type", "application/json; charset=utf-8")
     request.end_headers()
