@@ -24,13 +24,11 @@ def run(request, params):
     result_json["msg"] = "success"
 
     if qs_params.get("variable") is None:
-        result_json["ok"] = False
+        result_json["code"] = 202
+        result_json['msg'] = "变量或者表达式不存在"
 
-    if result_json["ok"]:
-        if "tree" in qs_params.keys():
-            result_json["expression"] = api.debug.getVariableByExpression(qs_params["expression"][0], no_error=True).serializable()
-        else:
-            result_json["variable"] = api.debug.getVariableByExpression(qs_params["variable"][0], no_error=True).serializable()
+    if result_json["msg"]=="success":
+        result_json["expression"] = api.debug.getVariableByExpression(qs_params["expression"][0], no_error=True).serializable()
 
     request.send_response(200)
     request.send_header("Content-Type", "application/json; charset=utf-8")
