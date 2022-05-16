@@ -143,7 +143,7 @@ urls = api.url.URLS({
     },
     "api-frame-variable": {
         "url": "/debug/watches",
-        "match": "^/api/frame/variable$",
+        "match": "^/debug/watches$",
         "module": "url_modules.api.frame.variable"
     },
     "api-variables": {
