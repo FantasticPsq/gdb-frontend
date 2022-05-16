@@ -191,6 +191,35 @@ def connect(host, port):
         return False
 
 @threadSafe(no_interrupt=True)
+def getVariables():
+    frame = gdb.selected_frame()
+    variables = []
+    try:
+        try:
+            block = frame.block()
+        except RuntimeError:
+            block = False
+
+        while block:
+            for symbol in block:
+                if (symbol.is_argument or symbol.is_variable) and (symbol.name not in variables):
+                    try:
+                        value = symbol.value(frame)
+                    except Exception as e:
+                        util.verbose("[Error]", e)
+
+                    try:
+                        variable = getVariableByExpression(symbol.name, no_error=True).serializable()
+                        variables.append(variable)
+                    except:
+                        pass
+            block = block.superblock
+    except Exception as e:
+        util.verbose(e, traceback.format_exc())
+    return variables
+
+
+@threadSafe(no_interrupt=True)
 def getState():
     """
     Returns all debugging information with JSON-serializability.
