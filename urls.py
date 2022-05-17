@@ -63,7 +63,7 @@ urls = api.url.URLS({
     },
     "api-breakpoint-add": {
         "url": "/breakpoint/add",
-        "match": "^/breakpoint/add$",
+        "match": "^/api/breakpoint/add$",
         "module": "url_modules.api.breakpoint.add"
     },
     "api-breakpoint-del": {
