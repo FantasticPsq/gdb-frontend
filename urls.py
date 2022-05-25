@@ -57,8 +57,8 @@ urls = api.url.URLS({
         "module": "url_modules.api.sources"
     },
     "api-registers": {
-        "url": "/registers$",
-        "match": "^/registers$",
+        "url": "/api/registers$",
+        "match": "^/api/registers$",
         "module": "url_modules.api.registers"
     },
     "api-breakpoint-add": {
