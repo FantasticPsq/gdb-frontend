@@ -1367,35 +1367,35 @@ class Variable():
             
             return None
 
-        # if value.type:
-        #     terminalType = resolveTerminalType(value.type)
-        #     type_tree = resolveTypeTree(value.type)
+        if value.type:
+            terminalType = resolveTerminalType(value.type)
+            type_tree = resolveTypeTree(value.type)
 
-        #     serializable["type"] = serializableType(value.type)
-        #     # serializable["type"]["terminal"] = serializableType(terminalType)
-        #     # serializable["type_tree"] = serializableTypeTree(type_tree)
+            serializable["type"] = serializableType(value.type)
+            # serializable["type"]["terminal"] = serializableType(terminalType)
+            # serializable["type_tree"] = serializableTypeTree(type_tree)
 
-        #     if value.type.code == gdb.TYPE_CODE_ARRAY:
-        #         serializable["members"] = getSerializableArrayItems(value, circular_expression=self.expression)
-        #     else:
-        #         is_vector = True
+            if value.type.code == gdb.TYPE_CODE_ARRAY:
+                serializable["members"] = getSerializableArrayItems(value, circular_expression=self.expression)
+            else:
+                is_vector = True
 
-        #         try:
-        #             _M_impl = value["_M_impl"]
-        #             _M_start = _M_impl['_M_start']
-        #         except:
-        #             is_vector = False
+                try:
+                    _M_impl = value["_M_impl"]
+                    _M_start = _M_impl['_M_start']
+                except:
+                    is_vector = False
 
-        #         if is_vector:
-        #             serializable["members"] = getSerializableVectorItems(value, circular_expression=self.expression)
-        #         elif isinstance(value.type.name, str) and value.type.name.startswith("tyArray__"):
-        #             serializable["members"] = Nim__getSerializableArrayItems(value, circular_expression=self.expression)
-        #         elif isinstance(terminalType.name, str) and terminalType.name.startswith("tySequence__"):
-        #             serializable["members"] = Nim__getSerializableSequenceItems(value, circular_expression=self.expression)
-        #         else:
-        #             serializable["members"] = getSerializableStructMembers(value, terminalType, parent_expression=self.expression)
-        # else:
-        #     serializable["type"] = False
+                if is_vector:
+                    serializable["members"] = getSerializableVectorItems(value, circular_expression=self.expression)
+                elif isinstance(value.type.name, str) and value.type.name.startswith("tyArray__"):
+                    serializable["members"] = Nim__getSerializableArrayItems(value, circular_expression=self.expression)
+                elif isinstance(terminalType.name, str) and terminalType.name.startswith("tySequence__"):
+                    serializable["members"] = Nim__getSerializableSequenceItems(value, circular_expression=self.expression)
+                else:
+                    serializable["members"] = getSerializableStructMembers(value, terminalType, parent_expression=self.expression)
+        else:
+            serializable["type"] = False
 
         return serializable
 
